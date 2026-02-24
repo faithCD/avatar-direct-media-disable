@@ -1,5 +1,18 @@
-# mautrix-discord
-A Matrix-Discord puppeting bridge based on [discordgo](https://github.com/bwmarrin/discordgo).
+# mautrix-discord (Modified Fork)
+This is a modified fork of [mautrix-discord](https://github.com/mautrix/discord) based on [discordgo](https://github.com/bwmarrin/discordgo).
+
+## Changes in This Fork
+
+This fork disables **direct media for avatars only** even if the config.yaml has direct_media enabled.
+
+### Reason
+
+Some Synapse homeserver configurations reject remote `mxc://` avatar media
+if it is not already present in the local media repository cache. Disabling
+direct media for avatars only ensures that mautrix-discord defaults to 
+copy the attachment to the main matrix homeserver.
+
+No other direct media functionality has been modified.
 
 ## Documentation
 All setup and usage instructions are located on [docs.mau.fi]. Some quick links:
@@ -16,4 +29,9 @@ All setup and usage instructions are located on [docs.mau.fi]. Some quick links:
 contains a general overview of what is supported by the bridge.
 
 ## Discussion
-Matrix room: [#discord:maunium.net](https://matrix.to/#/#discord:maunium.net)
+Upstream Matrix room: [#discord:maunium.net](https://matrix.to/#/#discord:maunium.net)
+
+## License
+
+This project remains licensed under the GNU Affero General Public License v3.0 (AGPLv3),
+in accordance with the original project.
