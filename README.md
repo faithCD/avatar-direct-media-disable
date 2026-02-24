@@ -10,7 +10,7 @@ This fork disables **direct media for avatars only** even if the config.yaml has
 Some Synapse homeserver configurations reject remote `mxc://` avatar media
 if it is not already present in the local media repository cache. Disabling
 direct media for avatars only ensures that mautrix-discord defaults to 
-copy the attachment to the main matrix homeserver.
+copying the attachment to the main matrix homeserver.
 
 No other direct media functionality has been modified.
 
@@ -35,3 +35,10 @@ Upstream Matrix room: [#discord:maunium.net](https://matrix.to/#/#discord:mauniu
 
 This project remains licensed under the GNU Affero General Public License v3.0 (AGPLv3),
 in accordance with the original project.
+
+#### NOTE:
+This patch is intentionally minimal. As this is not my primary programming
+language, I opted for a small modification rather than introducing new
+configuration structures. Ideally, a configurable option under brige.direct_media 
+for the config.yaml for specifically enabling or disabling avatars independently would be 
+a nicer solution as to ensure compatibility with matrix servers other than Synapse.
