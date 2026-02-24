@@ -231,10 +231,6 @@ func (br *DiscordBridge) reuploadUserAvatar(intent *appservice.IntentAPI, guildI
 			downloadURL = discordgo.EndpointGuildMemberAvatar(guildID, userID, avatarID)
 		}
 	}
-	url := br.DMA.AvatarMXC(guildID, userID, avatarID)
-	if !url.IsEmpty() {
-		return url, downloadURL, nil
-	}
 	copied, err := br.copyAttachmentToMatrix(intent, downloadURL, false, AttachmentMeta{
 		AttachmentID: fmt.Sprintf("avatar/%s/%s/%s", guildID, userID, avatarID),
 	})
