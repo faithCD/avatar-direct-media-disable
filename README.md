@@ -39,6 +39,6 @@ in accordance with the original project.
 #### NOTE:
 This patch is intentionally minimal. As this is not my primary programming
 language, I opted for a small modification rather than introducing new
-configuration structures. Ideally, a configurable option under brige.direct_media 
+configuration structures. Ideally, a configurable option under bridge.direct_media 
 for the config.yaml for specifically enabling or disabling avatars independently would be 
 a nicer solution as to ensure compatibility with matrix servers other than Synapse.
